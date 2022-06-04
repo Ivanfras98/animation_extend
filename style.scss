@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+%bg-gen {
+  background: rgb(random(255), random(255), random(255));
+}
+
+@mixin star-end($start, $lenght) {
+  animation-duration: 1s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  @keyframes bounce {
+    0% {
+      width: 55px;
+      height: 45px;
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translate(-$start, -$lenght);
+    }
+  }
+}
+$terrain-color: green;
+$ball-color: orange;
+$container: lightblue;
+.wrap {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 50%;
+    background-color: $container;
+    width: 35%;
+  }
+  .terrain {
+    height: 10px;
+    background-color: $terrain-color;
+  }
+
+  .ball {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    // background-color:$ball-color;
+    @include star-end(0px, 300px);
+    align-self: center;
+  }
+  .bounce {
+    @extend %bg-gen
+  }
+}

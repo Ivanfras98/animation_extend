@@ -1,85 +1,49 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 .wrap .bounce {
-  background: #70e37a;
+  background-color: #71843E;
 }
 
 .wrap {
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .wrap .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  flex-direction: column-reverse;
   height: 50%;
   background-color: lightblue;
   width: 35%;
 }
-
 .wrap .terrain {
   height: 10px;
   background-color: green;
 }
-
 .wrap .ball {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-name: bounce;
-          animation-name: bounce;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  animation-duration: 1s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  align-self: center;
 }
-
-@-webkit-keyframes bounce {
-  0% {
-    width: 55px;
-    height: 45px;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-  100% {
-    -webkit-transform: translate(0px, -300px);
-            transform: translate(0px, -300px);
-  }
-}
-
 @keyframes bounce {
   0% {
     width: 55px;
     height: 45px;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
   }
   100% {
-    -webkit-transform: translate(0px, -300px);
-            transform: translate(0px, -300px);
+    transform: translate(0px, -300px);
   }
 }
+
 /*# sourceMappingURL=style.css.map */

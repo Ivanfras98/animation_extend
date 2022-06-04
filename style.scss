@@ -4,9 +4,42 @@
   padding: 0;
 }
 
-%bg-gen {
-  background: rgb(random(255), random(255), random(255));
+
+@function random-hex() {
+  $finishedcolor: "#";
+  @for $i from 1 through 6 {
+    $number: random(16) - 1;
+    @if $number < 10 {
+       $finishedcolor: $finishedcolor + $number;
+    } @else {
+      @if $number == 10 {
+        $finishedcolor: $finishedcolor + "A";
+      } @else {
+        @if $number == 11 {
+          $finishedcolor: $finishedcolor + "B";
+        } @else {
+          @if $number == 12 {
+            $finishedcolor: $finishedcolor + "C";
+          } @else {
+            @if $number == 13 {
+              $finishedcolor: $finishedcolor + "D";
+            } @else {
+              @if $number == 14 {
+                $finishedcolor: $finishedcolor + "E";
+              } @else {
+                @if $number == 15 {
+                  $finishedcolor: $finishedcolor + "F";
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @return unquote($finishedcolor);
 }
+%bg-random {background-color: random-hex();}
 
 @mixin star-end($start, $lenght) {
   animation-duration: 1s;
@@ -54,7 +87,8 @@ $container: lightblue;
     @include star-end(0px, 300px);
     align-self: center;
   }
+  
   .bounce {
-    @extend %bg-gen
+   @extend %bg-random;
   }
 }
